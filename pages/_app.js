@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import "@/styles/globals.css";
 import Head from "next/head";
 
@@ -14,7 +16,7 @@ export default function App({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
-        
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -27,7 +29,10 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
 
+
+      <Header></Header>
       <Component {...pageProps} />
+      <Footer></Footer>
     </>
 
   )
