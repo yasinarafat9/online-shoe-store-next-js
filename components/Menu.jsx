@@ -24,14 +24,14 @@ const Menu = ({ showCatMenu, setShowCatMenu }) => {
                     <React.Fragment key={item.id}>
                         {!!item?.subMenu ? (
                             <li className='cursor-pointer flex items-center gap-2 relative'
-                            onMouseEnter={()=> setShowCatMenu(true)}
-                            onMouseLeave={()=> setShowCatMenu(false)}
+                                onMouseEnter={() => setShowCatMenu(true)}
+                                onMouseLeave={() => setShowCatMenu(false)}
                             >
                                 {item.name}
                                 <BsChevronDown size={14}></BsChevronDown>
 
                                 {showCatMenu && (
-                                    <ul className='bg-white absolute top-6 left-0 min-w-[250px] px-1 text-black shadow-lg'>
+                                    <ul className='bg-white absolute top-6 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg'>
                                         {subMenuData.map((submenu) => {
                                             return (
                                                 <Link key={submenu.id} href="/">
