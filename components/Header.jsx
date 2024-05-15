@@ -7,6 +7,7 @@ import { IoMdHeartEmpty } from "react-icons/io"
 import { BsCart } from "react-icons/bs"
 import { BiMenuAltRight } from "react-icons/bi"
 import { VscChromeClose } from "react-icons/vsc"
+import MenuMobile from "./MenuMobile";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -23,11 +24,19 @@ const Header = () => {
         <Link href="/">
           <img src="/logo.svg" className="w-[40px] md:w-[60px]" alt="" />
         </Link>
-        <Menu showCatMenu={showCatMenu}
-          setShowCatMenu={setShowCatMenu}
-        >
 
-        </Menu>
+        <Menu
+          showCatMenu={showCatMenu}
+          setShowCatMenu={setShowCatMenu}
+        />
+
+        {mobileMenu && (
+          <MenuMobile
+            showCatMenu={showCatMenu}
+            setShowCatMenu={setShowCatMenu}
+            setMobileMenu={setMobileMenu}
+          />
+        )}
 
         <div className="flex items-center gap-2 text-black">
 
