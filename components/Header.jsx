@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Wrapper from "./Wrapper";
 import Link from "next/link";
 import Menu from "./Menu";
@@ -14,6 +14,26 @@ const Header = () => {
   const [showCatMenu, setShowCatMenu] = useState(false);
   const [show, setShow] = useState('translate-y-0');
   const [lastScrolly, setLastScrolly] = useState(0);
+
+  // Scroll down to hide navbar and scroll to show navbar code start
+  const controlNavbar = () => {
+    if (window.scrollY > 200) {
+      if(window.scrollY > lastScrolly && !mobileMenu){
+        setShow("-translate-y-[80px]")
+      }
+    } else {
+      setShow("translate-y-0")
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar)
+    }
+  }, [lastScrolly])
+
+  // Scroll down to hide navbar and scroll to show navbar code end
 
 
   return (
