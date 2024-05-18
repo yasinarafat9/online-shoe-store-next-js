@@ -4,7 +4,15 @@ import { BiArrowBack } from "react-icons/bi";
 const HeroBanner = () => {
     return (
         <div className="relative text-white text-[20px] w-full max-w-[1260px] mx-auto">
-            <Carousel>
+            <Carousel
+                autoPlay={true}
+                infiniteLoop={true}
+                interval={1000}
+                showThumbs={false}
+                showIndicators={false}
+                showStatus={false}
+                swipeable={true}
+            >
                 <div>
                     <img src="/slide-1.png" alt=""
                         className="aspect-[16/10] md:aspect-auto object-cover" />
