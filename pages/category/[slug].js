@@ -1,3 +1,4 @@
+import ProductCard from '@/components/ProductCard';
 import Wrapper from '@/components/Wrapper';
 import React from 'react';
 
