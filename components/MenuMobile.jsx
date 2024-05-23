@@ -55,7 +55,7 @@ const MenuMobile = ({ showCatMenu, setShowCatMenu, setMobileMenu }) => {
                         ) : (
                             <li className='py-4 px-5 border-b'>
                                 <Link
-                                    href={item.url}
+                                    href="/category/slug"
                                     onClick={() => setMobileMenu(false)}
                                 >
                                     {item.name}
